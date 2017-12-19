@@ -44,11 +44,13 @@ li.resource {
 }
 .player {
 	position: relative;
-	width: 75px;
-	height: 75px;
+	width: 100px;
+	height: 100px;
 	margin: 0 auto;
-	top: 50%;
-	background: #000;
+	top: 30%;
+	background-image: url('images/schloss.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .bottomMenu {
 	position: relative;
@@ -87,5 +89,4 @@ li.resource {
 .costsDisplay span {
 	padding: 6.5px;
 	border-radius: 3px;
-	background: #ccc;
 }

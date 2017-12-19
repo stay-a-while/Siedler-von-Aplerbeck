@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="fieldWhole">
 			<div class="playField enemySide">
-		
+				<div></div>
 			</div>
 			<div class="playField playerSide">
 				<div class="player"></div>
@@ -16,10 +16,10 @@
 		</div>
 		<div class="menu sideMenu">
 			<ul class="resourceList">
-				<li class="resource">Gold: <span class="gold"></span><span class="goldPerSec"> +</span></li>
-				<li class="resource">Holz: <span class="wood"></span></li>
-				<li class="resource">Stein: <span class="stone	"></span></li>
-				<li class="resource">Metall: <span class="metal"></span></li>
+				<li class="resource">Gold: <span class="gold"></span> +<span class="goldPerSec"></span></li>
+				<li class="resource">Holz: <span class="wood"></span> +<span class="woodPerSec"></span></li>
+				<li class="resource">Stein: <span class="stone	"></span> +<span class="stonePerSec"></span></li>
+				<li class="resource">Metall: <span class="metal"></span> +<span class="metalPerSec"></span></li>
 			</ul>
 		</div>
 		<div class="menu bottomMenu">
@@ -35,40 +35,40 @@
 					<li class="costs" id="farm">
 						<img src="images/farm.png" /> Farm <span class="objectLevel"></span> 
 						<ul>
-							<li><span class="costGold">Gold </span></li>
-							<li><span class="costWood">Wood </span></li>
-							<li><span class="costStone">Stone </span></li>
-							<li><span class="costMetal">Metal </span></li> 
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li> 
 							<div id="farm" class="btn btn-sm btn-info buyButton">Kaufen</div>
 						</ul>
 					</li>
 					<li class="costs" id="logger">
 						<img src="images/holz.png" /> Logger <span class="objectLevel"></span> 
 						<ul>
-							<li><span class="costGold">Gold </span></li>
-							<li><span class="costWood">Wood </span></li>
-							<li><span class="costStone">Stone </span></li>
-							<li><span class="costMetal">Metal </span></li>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>
 							<div id="logger" class="btn btn-sm btn-info buyButton">Kaufen</div>
 						</ul>
 					</li>
 					<li class="costs" id="stone">
 						<img src="images/steinmine.png" /> Stonecutter <span class="objectLevel"></span> 
 						<ul>
-							<li><span class="costGold">Gold </span></li>
-							<li><span class="costWood">Wood </span></li>
-							<li><span class="costStone">Stone </span></li>
-							<li><span class="costMetal">Metal </span></li>   
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>  
 							<div id="stone" class="btn btn-sm btn-info buyButton">Kaufen</div>
 						</ul>
 					</li>
 					<li class="costs" id="iron">
 						<img src="images/eisenmine.png" /> Iron Mine <span class="objectLevel"></span>
 						<ul>
-							<li><span class="costGold">Gold </span></li>
-							<li><span class="costWood">Wood </span></li>
-							<li><span class="costStone">Stone </span></li>
-							<li><span class="costMetal">Metal </span></li>   
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>  
 							<div id="iron" class="btn btn-sm btn-info buyButton">Kaufen</div>
 						</ul>
 						
@@ -76,8 +76,9 @@
 				</ul>
 			</div>
 		</div>
+		
 	</div>
-
+<div id="dev-output"></div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
