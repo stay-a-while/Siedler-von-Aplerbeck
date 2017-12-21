@@ -84,6 +84,9 @@ $(document).ready(function () {
 
 	//Init -- Start
 
+	//@todo Prüfen ob Spielstand vorhanden ist, ansonsten neuen erstellen
+	gameDataSync();
+
 	// Derzeit verfügbare Rohstoffe
 	updateResources();
 
@@ -105,11 +108,13 @@ $(document).ready(function () {
 		gameData.playerResources.stone = gameData.playerResources.stone + stonePerSec;
 		gameData.playerResources.metal = gameData.playerResources.metal + metalPerSec;
 		updateResources();
-
-
-		//dev output
-		$( "#dev-output" ).html( "<p>" + JSON.stringify(gameData) + "</p>");
 	}, 1000);
+
+	
+	//Backend Synchronisation alle 3 Sekunden
+	setInterval(function() {
+		gameDataSync();
+	}, 3000);
 
 
 	//Objekt kaufen
@@ -196,7 +201,6 @@ function checkResources(type) {
 
 //Vorher muss object level hochgesetzt werden
 function updateBuildCost(type) {
-
 	if (type) {
 		$.each( gameData.objectCost, function( key, value ) {
 			if (key == type) {
@@ -218,4 +222,43 @@ function updateBuildCost(type) {
 		$( this ).find(".objectLevel").html(" ("+(gameData.objectLevel[this.id])+") ");
 	});
 
+}
+
+function gameDataSync() {
+	console.log('Backend Synchronisation beginnt');
+
+	
+	var query = `mutation {
+		createGameDataObj(input: {
+		  dataObj: "` + btoa(gameData) + `",
+		}) {
+		  gameID
+		  dataObj
+		}
+	  }`;
+
+	$.ajax({
+		url: 'http://127.0.0.1:4000/api',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify({
+			query: query,
+		  }),
+		success: function (result) {
+			result.dataObjJson = JSON.stringify(atob(result.data.createGameDataObj.dataObj));
+			$( "#dev-output" ).html( "<p>" + JSON.stringify(result) + "</p>");
+			console.log(result.data);
+		},
+		error: function (result) {
+			//@todo prüfen ob Backend erreichbar ist und das gewünschte Ergebnis asugibt, wenn nicht: Fehlermeldung an Spieler
+			console.log(result);
+		}
+	});
+
+	console.log(query);
+	console.log('Backend Synchronisation abgeschlossen');
+	return true;
 }
