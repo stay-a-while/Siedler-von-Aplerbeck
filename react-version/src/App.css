@@ -48,7 +48,7 @@ li.resource {
 	height: 100px;
 	margin: 0 auto;
 	top: 30%;
-	background-image: url('images/schloss.png');
+	background-image: url('/../images/schloss.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 }

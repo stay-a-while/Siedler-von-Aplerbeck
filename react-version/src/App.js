@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './css/bootstrap.min.css';
 import $ from 'jquery';
 
 // start resources
@@ -266,7 +266,7 @@ function buyObject(type) {
   }
 
 
-  function escapeSpecialCharacters(string)
+  /*function escapeSpecialCharacters(string)
   {
     return string
       .replace(/[']/g, "\\'")
@@ -286,7 +286,7 @@ function buyObject(type) {
       return escapeSpecialCharacters(value);
     }
     return value;
-  }
+  }*/
 }
 
   render() {
