@@ -1,0 +1,92 @@
+body, html {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style: none;
+}
+.container {
+	padding: 0 !important;
+}
+.fieldWhole {
+	background: url('/../images/kreuz.png');
+}
+.playField {
+
+}
+ul.resourceList {
+	padding: 5px;
+	margin: 5px;
+}
+li.resource {
+	margin-bottom: 15px;
+}
+.row li {
+	border: 1px solid black;
+	padding: 10px;
+}
+.container {
+	position: relative;
+	height: 1100px;
+	width: 1000px; 
+	border: 1px solid #000;
+}
+.enemySide {
+	position: relative;
+	height: 600px;
+	width: 800px;
+}
+.playerSide {
+	position: relative;
+ 	height: 150px;	
+	border-top: 1px dashed #000;
+ 	border-radius: 50%;
+}
+.player {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	top: 30%;
+	background-image: url('images/schloss.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.bottomMenu {
+	position: relative;
+	height: 250px;
+	border-top: 1px solid #000;
+	background: #fff;
+}
+.bottomMenu ul {
+	padding-left: 15px;
+}
+.bottomMenu li {
+	-webkit-transition: 250ms;
+	-o-transition: 250ms;
+	transition: 250ms;
+}
+.row li:hover{
+	background: #ccc;
+}
+.sideMenu {
+	position: absolute;
+	width: 200px;
+	top: 589px;
+	right: 0;
+	background: #fff;
+	border: 1px solid #000;
+}
+
+.costs {
+	font-size:18px;
+	padding: 0 15px;
+}
+#farm, #logger, #stone, #metal {
+	float: left;
+}
+
+.costsDisplay span {
+	padding: 6.5px;
+	border-radius: 3px;
+}
