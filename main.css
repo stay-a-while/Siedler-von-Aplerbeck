@@ -11,9 +11,6 @@ ul {
 .fieldWhole {
 	background: url('images/kreuz.png');
 }
-.playField {
-
-}
 ul.resourceList {
 	padding: 5px;
 	margin: 5px;
@@ -34,7 +31,6 @@ li.resource {
 .enemySide {
 	position: relative;
 	height: 600px;
-	width: 800px;
 }
 .playerSide {
 	position: relative;
@@ -51,6 +47,13 @@ li.resource {
 	background-image: url('images/schloss.png');
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.playerCount {
+	position: relative;
+	text-align: center;
+	font-size: 20px;
+	bottom: 3rem;
+	background-image: url('images/Sklave.png');
 }
 .bottomMenu {
 	position: relative;
@@ -72,7 +75,7 @@ li.resource {
 .sideMenu {
 	position: absolute;
 	width: 200px;
-	top: 589px;
+	top: 545px;
 	right: 0;
 	background: #fff;
 	border: 1px solid #000;
@@ -82,7 +85,7 @@ li.resource {
 	font-size:18px;
 	padding: 0 15px;
 }
-#farm, #logger, #stone, #metal, #Kaserne, #Stallungen, #Schießstand, #Sklavenmarkt, #Soldier, #Rider, #Archer, #Slavetroop {
+#farm, #logger, #stone, #metal, #Kaserne, #Stallungen, #Schießstand, #Sklavenmarkt, #Soldier, #university, #field, #forest, #stoneMine, #ironmine {
 	float: left;
 }
 
@@ -90,6 +93,8 @@ li.resource {
 	padding: 6.5px;
 	border-radius: 3px;
 }
+
+#/* Die einzelnen Baumenus bei Start des Spiels */
 
 #bauMenu {
 	display: inherit;
@@ -105,21 +110,52 @@ li.resource {
 	display: none;
 
 }
+
+#researchMenu {
+	display: none;
+
+}
+
+/*Die Kaufknopf der Einheit*/
+
+div.SoldierBtn {
+	display: none;
+}
+
 /*-------------Gegner----------------*/
 .enemyBase {
 	position: relative;
 	display: none;
 	width: 75px;
 	height: 75px;
-	color: #fff;
-	background: #000;
+	margin: 0 auto;
+	background-image: url('images/gegnerschloss.png');
 }
 .enemyCount {
 	position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 7rem;
+    font-size: 20px;
     text-align: center;
 }
 .baseActive {
 	display: block;
+}
+/*-------------Einheiten----------------*/
+.troops {
+	position: absolute;
+	display: none;
+	width: 25px;
+	height: 25px;
+	color: #000;
+	text-align: center;
+}
+.visible {
+	display: block;
+}
+.enemyTroops {
+	margin-top: 80px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-image: url('images/Gegner.png');
+
 }
