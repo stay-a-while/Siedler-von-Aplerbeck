@@ -8,7 +8,9 @@
 	<div class="container">
 		<div class="fieldWhole">
 			<div class="playField enemySide">
-				<div></div>
+				<div class="enemyBase">
+					<div class="enemyCount"></div>
+				</div>
 			</div>
 			<div class="playField playerSide">
 				<div class="player"></div>
@@ -24,12 +26,12 @@
 		</div>
 		<div class="menu bottomMenu">
 			<ul class="row">
-				<li id="bauen" class="col-xs-2">Bauen</li>
-				<li class="col-xs-2">Krieg</li>
-				<li class="col-xs-2">Nichts</li>
+				<li id="bauen" class="col-xs-2" onclick="bauVisibility()">Bauen</li>
+				<li id="krieg" class="col-xs-2" onclick="kriegVisibility()">Krieg</li>
+				<li id='unit' class="col-xs-2" onclick='unitVisibility()' >Einheiten</li>
 				<li class="col-xs-2">Nichts</li>
 			</ul>
-			<div class="bauMenu">
+			<div id="bauMenu" class="bauMenu">
 				<p class="costs">Costs</p>
 				<ul class="costsDisplay">
 					<li class="costs" id="farm">
@@ -75,6 +77,98 @@
 					</li>
 				</ul>
 			</div>
+			<div id="KriegMenu" class="KriegMenu">
+				<p class="costs">Costs</p>
+				<ul class="costsDisplay">
+					<li class="costs" id="Kaserne">
+						<img src="" /> Kaserne <span class="objectLevel"></span> 
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li> 
+							<div id="Kaserne" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+					</li>
+					<li class="costs" id="Stallungen">
+						<img src="" /> Stallungen <span class="objectLevel"></span> 
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>
+							<div id="Stallungen" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+					</li>
+					<li class="costs" id="Schießstand">
+						<img src="" /> Schießstand <span class="objectLevel"></span> 
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>  
+							<div id="Schießstand" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+					</li>
+					<li class="costs" id="Sklavenmarkt">
+						<img src="" /> Sklavenmarkt <span class="objectLevel"></span>
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>  
+							<div id="Sklavenmarkt" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+						
+					</li>
+				</ul>
+			</div>
+			<!--<div id="UnitMenu" class="UnitMenu">
+				<p class="costs">Costs</p>
+				<ul class="costsDisplay">
+					<li class="costs" id="Soldier">
+						<img src="" /> Soldat <span class=""></span> 
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li> 
+							<div id="Soldier" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+					</li>
+					<li class="costs" id="Rider">
+						<img src="" /> Reiter <span class=""></span> 
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>
+							<div id="Rider" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+					</li>
+					<li class="costs" id="Archer">
+						<img src="" /> Bogenschütze <span class=""></span> 
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>  
+							<div id="Archer" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+					</li>
+					<li class="costs" id="Slavetroop">
+						<img src="" /> Sklavensoldat <span class=""></span>
+						<ul>
+							<li><span class="cost costGold">Gold</span> <span class="gold-value"></span></li>
+							<li><span class="cost costWood">Wood</span> <span class="wood-value"></span></li>
+							<li><span class="cost costStone">Stone</span> <span class="stone-value"></span></li>
+							<li><span class="cost costMetal">Metal</span> <span class="metal-value"></span></li>  
+							<div id="Slavetroop" class="btn btn-sm btn-info buyButton">Kaufen</div>
+						</ul>
+						
+					</li>
+				</ul>
+			</div>-->
 		</div>
 		
 	</div>

@@ -82,11 +82,44 @@ li.resource {
 	font-size:18px;
 	padding: 0 15px;
 }
-#farm, #logger, #stone, #metal {
+#farm, #logger, #stone, #metal, #Kaserne, #Stallungen, #Schießstand, #Sklavenmarkt, #Soldier, #Rider, #Archer, #Slavetroop {
 	float: left;
 }
 
 .costsDisplay span {
 	padding: 6.5px;
 	border-radius: 3px;
+}
+
+#bauMenu {
+	display: inherit;
+
+}
+
+#KriegMenu {
+	display: none;
+
+}
+
+#UnitMenu {
+	display: none;
+
+}
+/*-------------Gegner----------------*/
+.enemyBase {
+	position: relative;
+	display: none;
+	width: 75px;
+	height: 75px;
+	color: #fff;
+	background: #000;
+}
+.enemyCount {
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.baseActive {
+	display: block;
 }
