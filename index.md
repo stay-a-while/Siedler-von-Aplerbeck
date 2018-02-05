@@ -1,6 +1,6 @@
 # Siedler von Aplerbeck - AE Projekt
 
-[Spiel starten](https://stay-a-while.github.io/game.html)
+<center>[Spiel starten](https://stay-a-while.github.io/game.html)</center>
 
 ## Über das Projekt
 Bei dem Projekt handelt es sich um ein leichtgewichtiges browserbasiertes Incremental Spiel. Der Spieler hat eine Basis, die er ausbauen und gegen Angreifer Verteidigen muss. Zum Ausbau der Basis werden die Rohstoff-Resourcen Gold, Holz, Stein und Metall benötigt. Die sekündliche Produktion der Rohstoff-Resourcen kann durch den Ausbau der Objekte Farm, Logger, Stonecutter und Iron Mine erhöht werden. Zusätzlich kann eine Universität zur Forschung erbaut werden um die Rohstoff Produktion noch weiter zu erhöhen. Zur Verteidigung vor Angriffen muss eine Kaserne gebaut werden, in der Kampfeinheiten ausgebildet werden.
